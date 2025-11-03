@@ -1,36 +1,154 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Data Structure Visualizer
 
-## Getting Started
+An interactive web application for visualizing and understanding various data structures. Built with Next.js, TypeScript, and Firebase.
 
-First, run the development server:
+## Features
+
+- **Interactive Visualizations**: Visual representations of 10 different data structures
+- **Google Authentication**: Secure login with Google OAuth
+- **Operation Logging**: Track all operations performed on data structures
+- **Iterative & Sequential Operations**: Support for bulk operations (add multiple items, add ranges, etc.)
+- **Code Display**: Python implementation code with syntax highlighting and function highlighting
+- **Firestore Integration**: Cloud storage for user activity logs
+- **Responsive Design**: Beautiful, modern UI built with Tailwind CSS
+- **Smooth Animations**: Framer Motion powered animations for better user experience
+
+## Data Structures Supported
+
+1. ✅ **Stack** - LIFO (Last In First Out) data structure
+2. ✅ **Queue** - FIFO (First In First Out) data structure
+3. ✅ **Linked List** - Linear data structure with nodes
+4. ✅ **Array** - Collection of elements at contiguous memory
+5. ✅ **Hash Table** - Key-value pair storage
+6. ✅ **Graph** - Network of interconnected nodes
+7. ⏳ **Tree** - Hierarchical data structure (Placeholder)
+8. ✅ **Binary Search Tree** - Sorted binary tree with highlighted insertion path
+9. ⏳ **AVL Tree** - Self-balancing binary search tree (Placeholder)
+10. ⏳ **Heap** - Complete binary tree for priority operations (Placeholder)
+
+## Tech Stack
+
+### Frontend
+- **Next.js** - React framework
+- **TypeScript** - Type safety
+- **React** - UI library
+- **Tailwind CSS** - Styling
+- **Framer Motion** - Animations
+
+### Backend
+- **Next.js API Routes** - Server-side logic
+- **Firebase** - Authentication & Firestore database
+
+### Database
+- **Firestore** - NoSQL cloud database
+
+## Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd data-structure-visualizer
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure Firebase
+
+1. Go to [Firebase Console](https://console.firebase.google.com/)
+2. Create a new project or use an existing one
+3. Enable **Google Authentication**:
+   - Go to Authentication > Sign-in method
+   - Enable Google sign-in
+   - Add your domain to authorized domains
+4. Create a **Firestore Database**:
+   - Go to Firestore Database
+   - Create database in production mode (or test mode for development)
+   - Set up security rules (see below)
+
+5. Get your Firebase configuration:
+   - Go to Project Settings > General
+   - Scroll down to "Your apps"
+   - Copy your web app's configuration
+
+### 4. Configure Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key_here
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project_id.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+```
+
+### 5. Set Up Firestore Security Rules
+
+Go to Firestore Database > Rules and use:
+
+```javascript
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /userActivities/{document=**} {
+      allow read, write: if request.auth != null && request.auth.uid == resource.data.userId;
+    }
+  }
+}
+```
+
+### 6. Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### For Users
 
-## Learn More
+1. **Sign In**: Click "Sign in with Google" on the home page
+2. **Select a Data Structure**: Click on any data structure card to view its visualization
+3. **Perform Operations**:
+   - Use basic operations (Push, Pop, Insert, Delete, etc.)
+   - Use iterative operations to perform multiple operations at once
+   - Use sequential operations to add ranges of values
+   - Upload CSV files for bulk operations
+4. **View Code**: See the Python implementation with highlighted functions
+5. **Check Logs**: View your operation history in the activity log
 
-To learn more about Next.js, take a look at the following resources:
+### For Developers
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Adding a New Data Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Create a new page in `app/[datastructure]/page.tsx`
+2. Add the Python code to `data-structures/python-codes/index.ts`
+3. Update `app/page.tsx` to add the new card
+4. Update `types/index.ts` to include the new data structure type
 
-## Deploy on Vercel
+#### Customizing Styles
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Modify Tailwind classes in components
+- Update color schemes in individual pages
+- Adjust animations in Framer Motion components
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Future Enhancements
+
+- [ ] Complete AVL Tree implementation with balancing animations
+- [ ] Complete Heap implementation with heapify operations
+- [ ] Add more operations (search, traversal algorithms)
+- [ ] Add algorithm visualizations (BFS, DFS, sorting, etc.)
+- [ ] Add graph algorithm visualizations
+- [ ] Export logs as PDF or CSV
+- [ ] Add tutorial mode for first-time users
+- [ ] Dark mode support
+- [ ] Multi-language support
