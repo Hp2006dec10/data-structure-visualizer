@@ -8,7 +8,7 @@ import CodeDisplay from '@/components/CodeDisplay';
 import LogPanel from '@/components/LogPanel';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { HASH_TABLE_CODE } from '@/data-structures/python-codes';
+import { HASH_TABLE_CODE } from '@/dsa-codes';
 
 interface HashTableEntry {
   key: string;

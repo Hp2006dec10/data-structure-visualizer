@@ -7,7 +7,7 @@ import { DataStructureType } from '@/types';
 import CodeDisplay from '@/components/CodeDisplay';
 import LogPanel from '@/components/LogPanel';
 import Link from 'next/link';
-import {GRAPH_CODE} from '@/data-structures/python-codes';
+import {GRAPH_CODE} from '@/dsa-codes';
 
 export default function GraphPage() {
   const { user } = useAuth();

@@ -9,7 +9,7 @@ import CodeDisplay from '@/components/CodeDisplay';
 import LogPanel from '@/components/LogPanel';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { BINARY_SEARCH_TREE_CODE } from '@/data-structures/python-codes';
+import { BINARY_SEARCH_TREE_CODE } from '@/dsa-codes';
 
 interface BSTNode {
   value: number;

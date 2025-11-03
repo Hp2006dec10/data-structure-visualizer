@@ -8,7 +8,7 @@ import CodeDisplay from '@/components/CodeDisplay';
 import LogPanel from '@/components/LogPanel';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { STACK_CODE } from '@/data-structures/python-codes';
+import { STACK_CODE } from '@/dsa-codes';
 
 export default function StackPage() {
   const { user } = useAuth();

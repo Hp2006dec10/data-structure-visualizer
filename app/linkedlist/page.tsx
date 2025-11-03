@@ -8,7 +8,7 @@ import CodeDisplay from '@/components/CodeDisplay';
 import LogPanel from '@/components/LogPanel';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { LINKED_LIST_CODE } from '@/data-structures/python-codes';
+import { LINKED_LIST_CODE } from '@/dsa-codes';
 
 interface Node {
   value: number;

@@ -8,7 +8,7 @@ import CodeDisplay from '@/components/CodeDisplay';
 import LogPanel from '@/components/LogPanel';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { QUEUE_CODE } from '@/data-structures/python-codes';
+import { QUEUE_CODE } from '@/dsa-codes';
 
 export default function QueuePage() {
   const { user } = useAuth();

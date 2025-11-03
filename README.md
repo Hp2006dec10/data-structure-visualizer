@@ -15,16 +15,15 @@ An interactive web application for visualizing and understanding various data st
 
 ## Data Structures Supported
 
-1. ✅ **Stack** - LIFO (Last In First Out) data structure
-2. ✅ **Queue** - FIFO (First In First Out) data structure
-3. ✅ **Linked List** - Linear data structure with nodes
-4. ✅ **Array** - Collection of elements at contiguous memory
-5. ✅ **Hash Table** - Key-value pair storage
-6. ✅ **Graph** - Network of interconnected nodes
-7. ⏳ **Tree** - Hierarchical data structure (Placeholder)
-8. ✅ **Binary Search Tree** - Sorted binary tree with highlighted insertion path
-9. ⏳ **AVL Tree** - Self-balancing binary search tree (Placeholder)
-10. ⏳ **Heap** - Complete binary tree for priority operations (Placeholder)
+1. **Stack** - LIFO (Last In First Out) data structure
+2. **Queue** - FIFO (First In First Out) data structure
+3. **Linked List** - Linear data structure with nodes
+4. **Array** - Collection of elements at contiguous memory
+5. **Hash Table** - Key-value pair storage
+6. **Graph** - Network of interconnected nodes
+7. **Binary Search Tree** - Sorted binary tree with highlighted insertion path
+9. **AVL Tree** - Self-balancing binary search tree (Placeholder)
+10. **Heap** - Complete binary tree for priority operations (Placeholder)
 
 ## Tech Stack
 
@@ -143,12 +142,12 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Future Enhancements
 
-- [ ] Complete AVL Tree implementation with balancing animations
-- [ ] Complete Heap implementation with heapify operations
-- [ ] Add more operations (search, traversal algorithms)
-- [ ] Add algorithm visualizations (BFS, DFS, sorting, etc.)
-- [ ] Add graph algorithm visualizations
-- [ ] Export logs as PDF or CSV
-- [ ] Add tutorial mode for first-time users
-- [ ] Dark mode support
-- [ ] Multi-language support
+- Complete AVL Tree implementation with balancing animations
+- Complete Heap implementation with heapify operations
+- Add more operations (search, traversal algorithms)
+- Add algorithm visualizations (BFS, DFS, sorting, etc.)
+- Add graph algorithm visualizations
+- Export logs as PDF or CSV
+- Add tutorial mode for first-time users
+- Dark mode support
+- Multi-language support
